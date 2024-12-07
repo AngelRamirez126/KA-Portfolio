@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Krystina Kulina</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            
+            <h1>Krystina Kulina</h1>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resume">Resume</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="skills-page">
+        <div class="page-container">
+            <h2 class="page-title fade-in">Featured Skills</h2>
+            
+            <!-- Early Childhood Education Skill -->
+            <div class="skill-card fade-in delay-1">
+                <div class="skill-header">
+                    <h3>Early Childhood Education</h3>
+                </div>
+                <div class="skill-content">
+                    <div class="skill-image">
+                        <img src="/images/pre-k_space-1024x592.jpg" alt="Early Childhood Education">
+                    </div>
+                    <div class="skill-details">
+                        <div class="skill-highlight">
+                            <h4>Classroom Management</h4>
+                            <p>Developed and implemented engaging lesson plans for children aged 2-4, focusing on fine and gross motor skills. Created an inclusive learning environment that promoted active participation and collaborative learning.</p>
+                        </div>
+                        <div class="skill-highlight">
+                            <h4>Individual Support</h4>
+                            <p>Provided one-on-one learning support for students with diverse learning needs, resulting in improved engagement and increased confidence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Child Development Skill -->
+            <div class="skill-card fade-in delay-2">
+                <div class="skill-header">
+                    <h3>Child Development</h3>
+                </div>
+                <div class="skill-content">
+                    <div class="skill-image">
+                        <img src="/images/AdobeStock_305336459.jpeg" alt="Child Development">
+                    </div>
+                    <div class="skill-details">
+                        <div class="skill-highlight">
+                            <h4>Developmental Assessment</h4>
+                            <p>Applied psychological principles to assess and support children's cognitive and social development through structured activities.</p>
+                        </div>
+                        <div class="skill-highlight">
+                            <h4>Behavioral Support</h4>
+                            <p>Implemented positive reinforcement strategies and behavior management techniques to create a supportive learning environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Krystina Kulina. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#resume">Resume</a>
+                <a href="skills.html">Skills</a>
+                <a href="training.html">Training</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.visibility = 'visible';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                element.style.visibility = 'hidden';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

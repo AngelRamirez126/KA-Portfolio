@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Development - Krystina Kulina</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1>Krystina Kulina</h1>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resume">Resume</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <h2 class="centered-heading fade-in">Professional Development Plan</h2>
+        <div class="section-divider"></div>
+
+        <div class="timeline-container">
+            <!-- Current Year -->
+            <div class="card skill-card fade-in delay-1">
+                <h3>Current Focus (2024)</h3>
+                <ul class="list-styled arrow-list">
+                    <li>Application for education degree</li>
+                    <li>Gaining experience in the classroom</li>
+                    <li>TESOL Certification</li>
+                    <li>Tutoring and volunteering</li>
+                </ul>
+            </div>
+
+            <!-- Short-term Goals -->
+            <div class="card skill-card fade-in delay-2">
+                <h3>Short-term Goals (1-2 Years)</h3>
+                <ul class="list-styled arrow-list">
+                    <li>Completion of education degree</li>
+                    <li>Completion of TESOL Certification</li>
+                    <li>Application for teaching license</li>
+                    <li>Application for abroad teaching position</li>
+                </ul>
+            </div>
+
+            <!-- Long-term Goals -->
+            <div class="card skill-card fade-in delay-3">
+                <h3>Long-term Goals (3-5 Years)</h3>
+                <ul class="list-styled arrow-list">
+                    <li>Master's Degree in Education</li>
+                    <li>Adanced TESOL certification</li>
+                    <li>Full-time teaching position</li>
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Existing Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Krystina Kulina. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#resume">Resume</a>
+                <a href="skills.html">Skills</a>
+                <a href="training.html">Training</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.visibility = 'visible';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                element.style.visibility = 'hidden';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
